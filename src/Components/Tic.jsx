@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Tic.css";
 
+
 const Tic = () => {
   const [playerOne, setPlayerOne] = useState([]);
   const [playerTwo, setPlayerTwo] = useState([]);
@@ -60,7 +61,7 @@ const Tic = () => {
   };
 
   return (
-    <div className="container" style={{marginTop:'5rem'}} >
+    <div className="container" style={{ marginTop: "5rem" }}>
       <div className="row d-flex justify-content-center">
         <div className="col-md-6 col-8">
           <div className="row">
@@ -121,13 +122,15 @@ const Tic = () => {
                 }}
               ></div>
             ))}
+            {winner && (
+              <div className="mt-3 text-center">
+                <h3>
+                  {winner === "Draw" ? "It's a draw!" : `${winner} wins!`}
+                </h3>
+              </div>
+            )}
           </div>
         </div>
-        {winner && (
-          <div className="mt-3">
-            <h3>{winner === "Draw" ? "It's a draw!" : `${winner} wins!`}</h3>
-          </div>
-        )}
       </div>
     </div>
   );
