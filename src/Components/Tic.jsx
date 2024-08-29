@@ -3,6 +3,7 @@ import "./Tic.css";
 
 
 const Tic = () => {
+  
   const [playerOne, setPlayerOne] = useState([]);
   const [playerTwo, setPlayerTwo] = useState([]);
   const [clickedCells, setClickedCells] = useState([]);
@@ -80,7 +81,15 @@ const Tic = () => {
                     ? "red"
                     : "transparent",
                 }}
-              ></div>
+              >
+                {playerOne.includes(num) ? (
+                  <h1>X</h1>
+                ) : playerTwo.includes(num) ? (
+                  <h1>-</h1>
+                ) : (
+                  ""
+                )}
+              </div>
             ))}
           </div>
 
@@ -100,7 +109,15 @@ const Tic = () => {
                     ? "red"
                     : "transparent",
                 }}
-              ></div>
+              >
+                {playerOne.includes(num) ? (
+                  <h1>X</h1>
+                ) : playerTwo.includes(num) ? (
+                  <h1>-</h1>
+                ) : (
+                  ""
+                )}
+              </div>
             ))}
           </div>
 
@@ -120,15 +137,37 @@ const Tic = () => {
                     ? "red"
                     : "transparent",
                 }}
-              ></div>
+              >
+                {playerOne.includes(num) ? (
+                  <h1>X</h1>
+                ) : playerTwo.includes(num) ? (
+                  <h1>-</h1>
+                ) : (
+                  ""
+                )}
+              </div>
             ))}
             {winner && (
-              <div className="mt-3 text-center">
-                <h3>
+              <div className="mt-5 text-center">
+                <h5>
                   {winner === "Draw" ? "It's a draw!" : `${winner} wins!`}
-                </h3>
+                </h5>
               </div>
             )}
+
+            <div className="text-center">
+              <div
+                className="btn btn-outline-primary mt-5 pe-5 ps-5 align-content-center"
+                onClick={() => {
+                  setPlayerOne([]);
+                  setPlayerTwo([]);
+                  setClickedCells([]);
+                  setWinner(null);
+                }}
+              >
+                Restart
+              </div>
+            </div>
           </div>
         </div>
       </div>
