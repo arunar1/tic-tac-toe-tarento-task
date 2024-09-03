@@ -37,9 +37,9 @@ const Tic = () => {
 
   useEffect(() => {
     if (checkWinner(playerOne)) {
-      setWinner("Player One");
+      setWinner("You");
     } else if (checkWinner(playerTwo)) {
-      setWinner("Player Two");
+      setWinner("Computer");
     } else if (clickedCells.length === 9) {
       setWinner("Draw");
     }
@@ -65,6 +65,16 @@ const Tic = () => {
     <div className="container" style={{ marginTop: "5rem" }}>
       <div className="row d-flex justify-content-center">
         <div className="col-md-6 col-8">
+          <div className="header-row row mb-4">
+            <div className="col-6 d-flex justify-content-center align-items-center text-center">
+              <p>You :&nbsp;</p>
+              <p className="icon-head ">x</p>
+            </div>
+            <div className="col-6 d-flex justify-content-center align-items-center text-center">
+              <p>Computer :&nbsp;</p>
+              <p className="icon-head">o</p>
+            </div>
+          </div>
           <div className="row">
             {[1, 2, 3].map((num) => (
               <div
@@ -75,17 +85,17 @@ const Tic = () => {
                 onClick={handleClick}
                 style={{
                   pointerEvents: clickedCells.includes(num) ? "none" : "auto",
-                  backgroundColor: playerOne.includes(num)
-                    ? "yellow"
-                    : playerTwo.includes(num)
-                    ? "red"
-                    : "transparent",
+                  // backgroundColor: playerOne.includes(num)
+                  //   ? "yellow"
+                  //   : playerTwo.includes(num)
+                  //   ? "red"
+                  //   : "transparent",
                 }}
               >
                 {playerOne.includes(num) ? (
-                  <h1>X</h1>
+                  <h1 className="icon">x</h1>
                 ) : playerTwo.includes(num) ? (
-                  <h1>-</h1>
+                  <h1 className="icon">o</h1>
                 ) : (
                   ""
                 )}
@@ -103,17 +113,17 @@ const Tic = () => {
                 onClick={handleClick}
                 style={{
                   pointerEvents: clickedCells.includes(num) ? "none" : "auto",
-                  backgroundColor: playerOne.includes(num)
-                    ? "yellow"
-                    : playerTwo.includes(num)
-                    ? "red"
-                    : "transparent",
+                  // backgroundColor: playerOne.includes(num)
+                  //   ? "yellow"
+                  //   : playerTwo.includes(num)
+                  //   ? "red"
+                  //   : "transparent",
                 }}
               >
                 {playerOne.includes(num) ? (
-                  <h1>X</h1>
+                  <h1 className="icon">x</h1>
                 ) : playerTwo.includes(num) ? (
-                  <h1>-</h1>
+                  <h1 className="icon">o</h1>
                 ) : (
                   ""
                 )}
@@ -131,24 +141,24 @@ const Tic = () => {
                 onClick={handleClick}
                 style={{
                   pointerEvents: clickedCells.includes(num) ? "none" : "auto",
-                  backgroundColor: playerOne.includes(num)
-                    ? "yellow"
-                    : playerTwo.includes(num)
-                    ? "red"
-                    : "transparent",
+                  // backgroundColor: playerOne.includes(num)
+                  //   ? "yellow"
+                  //   : playerTwo.includes(num)
+                  //   ? "red"
+                  //   : "transparent",
                 }}
               >
                 {playerOne.includes(num) ? (
-                  <h1>X</h1>
+                  <h1 className="icon">x</h1>
                 ) : playerTwo.includes(num) ? (
-                  <h1>-</h1>
+                  <h1 className="icon">o</h1>
                 ) : (
                   ""
                 )}
               </div>
             ))}
             {winner && (
-              <div className="mt-5 text-center">
+              <div className="mt-5 text-center" style={{marginBottom:'-2rem'}}>
                 <h5>
                   {winner === "Draw" ? "It's a draw!" : `${winner} wins!`}
                 </h5>

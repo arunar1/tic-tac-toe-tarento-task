@@ -1,6 +1,7 @@
 import React from "react";
 import Tic from "./Components/Tic";
-import './App.css'
+import "./App.css";
+
 import { Menu } from "./Components/Menu";
 
 import "bootstrap/dist/css/bootstrap.min.css";

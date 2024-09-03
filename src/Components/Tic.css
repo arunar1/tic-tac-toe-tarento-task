@@ -5,8 +5,19 @@
     align-items: center;
     justify-content: center;
     font-size: 24px;
-    /* background-color: #007bff; */
 }
-h1{
-    color: black;
+
+.icon{
+    color: rgb(90, 82, 82);
+    font-size: 55px;
+}
+
+.icon-head {
+    color: rgb(90, 82, 82);
+    font-weight: bold;
+    font-size: 45px;
+}
+
+p{
+    font-size: 35px;
 }
